@@ -1,5 +1,4 @@
 from flask import Flask
-import json
 
 app = Flask(__name__)
 
@@ -15,9 +14,8 @@ def home_page():
         Despite having a B.Sc. degree in Geology, I combined my passion for learning \
         and development, channelled it to Data Science & Software Development and acquired\
         skills which helps me in building personalized software for people."}
-    json_dump = json.dumps(my_data)
 
-    return json_dump
+    return my_data
 
 if __name__ == '__main__':
     app.run(debug=True)
