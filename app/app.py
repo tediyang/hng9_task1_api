@@ -1,9 +1,7 @@
-import os
 from flask import Flask
 import json
 
 app = Flask(__name__)
-DEPLOY = os.getenv('DEPLOY')
 
 @app.route('/', methods=['GET'])
 def home_page():
