@@ -11,9 +11,9 @@ app = Flask(__name__)
 def home_page_post():
     '''Post request taking you directly to homepage'''
     if request.method == 'POST':
-        x_value = request.form.get('x', type=int)
-        y_value = request.form.get('y', type=int)
-        operand = request.form.get('operation_type')
+        x_value = request.get_json('x', type=int)
+        y_value = request.get_json('y', type=int)
+        operand = request.get_json('operation_type')
         for i in operand:
             if i in ('subtraction', 'subtract'):
                 z_value = x_value - y_value
